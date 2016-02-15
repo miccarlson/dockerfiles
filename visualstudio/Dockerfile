@@ -61,6 +61,7 @@ RUN buildDeps=' \
 	&& curl -sSL https://az764295.vo.msecnd.net/public/0.10.6-release/VSCode-linux64.zip -o /tmp/vs.zip \
 	&& unzip /tmp/vs.zip -d /usr/src/ \
 	&& rm -rf /tmp/vs.zip \
+	&& apt-get update
 	&& apt-get purge -y --auto-remove $buildDeps
 
 #RUN build/update-linux-sandbox.sh
