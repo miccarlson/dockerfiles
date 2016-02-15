@@ -63,8 +63,9 @@ RUN buildDeps=' \
 	&& rm -rf /tmp/vs.zip \
 	&& apt-get purge -y --auto-remove $buildDeps
 
-RUN build/update-linux-sandbox.sh
+#RUN build/update-linux-sandbox.sh
 COPY start.sh /usr/local/bin/start.sh
 WORKDIR $HOME
 
-ENTRYPOINT [ "/usr/local/bin/start.sh" ]
+ENTRYPOINT [ "/bin/bash" ]
+#ENTRYPOINT [ "/usr/local/bin/start.sh" ]
